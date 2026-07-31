@@ -21,7 +21,7 @@ export default defineConfig({
 			customCss: ['./src/styles/theme.css'],
 			lastUpdated: true,
 			sidebar: [
-				{ label: 'Why "Commissions"?', slug: 'why-commissions' },
+				{ label: 'Why "Hallucinations"?', slug: 'why-hallucinations' },
 				{ label: 'Fiction', items: [{ autogenerate: { directory: 'fiction' } }] },
 				{ label: 'Ideas', items: [{ autogenerate: { directory: 'ideas' } }] },
 				{
