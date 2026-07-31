@@ -1,0 +1,95 @@
+/* Hallucinations — "ember in the ink" palette.
+   Dark: aubergine-ink surfaces, lavender-gray text, warm amber accent.
+   Light: warm paper with the same amber, for anyone who flips the toggle. */
+
+:root {
+	/* Amber accent */
+	--sl-color-accent-low: #3a2b12;
+	--sl-color-accent: #c98f2e;
+	--sl-color-accent-high: #f0cf96;
+
+	/* Violet-cast neutrals, warm-white text */
+	--sl-color-white: #efeaf5;
+	--sl-color-gray-1: #ddd5e8;
+	--sl-color-gray-2: #b9afc9;
+	--sl-color-gray-3: #8b809e;
+	--sl-color-gray-4: #584e6c;
+	--sl-color-gray-5: #383049;
+	--sl-color-gray-6: #262038;
+	--sl-color-black: #171227;
+
+	/* Slightly deeper canvas behind the content pane */
+	--sl-color-bg-nav: #1c1630;
+	--sl-color-bg-sidebar: #1a152c;
+	--sl-color-hairline: #2e2745;
+	--sl-color-hairline-light: #322a4a;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #f4e4c6;
+	--sl-color-accent: #8a5a12;
+	--sl-color-accent-high: #5c3a06;
+
+	--sl-color-white: #241c33;
+	--sl-color-gray-1: #352c47;
+	--sl-color-gray-2: #4a4160;
+	--sl-color-gray-3: #6f6588;
+	--sl-color-gray-4: #a79dbd;
+	--sl-color-gray-5: #d6cfe2;
+	--sl-color-gray-6: #efebf5;
+	--sl-color-gray-7: #f8f5fb;
+	--sl-color-black: #fdfbf6;
+
+	--sl-color-bg-nav: #f8f5fb;
+	--sl-color-bg-sidebar: #f8f5fb;
+}
+
+/* A faint amber glow bleeding into the top of every page */
+.page {
+	background-image: radial-gradient(
+		ellipse 80rem 24rem at 50% -8rem,
+		color-mix(in srgb, var(--sl-color-accent) 9%, transparent),
+		transparent 70%
+	);
+}
+
+/* Prose tuning — this is a reading site, not API docs */
+.sl-markdown-content {
+	line-height: 1.75;
+}
+
+.sl-markdown-content :is(h2, h3, h4) {
+	color: var(--sl-color-white);
+	letter-spacing: 0.01em;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+	color: var(--sl-color-accent-high);
+	text-decoration-color: color-mix(in srgb, var(--sl-color-accent) 45%, transparent);
+	text-underline-offset: 0.2em;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)):hover {
+	color: var(--sl-color-accent);
+}
+
+.sl-markdown-content blockquote {
+	border-inline-start-color: var(--sl-color-accent);
+	font-style: italic;
+}
+
+.sl-markdown-content hr {
+	border-color: var(--sl-color-hairline-light);
+}
+
+/* Hero styling on the landing page */
+[data-has-hero] .hero h1 {
+	background: linear-gradient(
+		120deg,
+		var(--sl-color-white) 30%,
+		var(--sl-color-accent-high)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
